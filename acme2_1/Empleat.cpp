@@ -7,34 +7,35 @@ using namespace std;
 //CONSTRUCTOR	
 Empleat::Empleat() {
 	//Pre:	--		
-	//Post:	treballador	inicialitzat	(codi,	0;	nom,	cognom,	població,	en	blanc	i	data	per	defecte)		
+	//Post:	treballador	inicialitzat	(codi,	0;	nom,	cognom,	poblaciÃ³,	en	blanc	i	data	per	defecte)		
 	a_codi = 0;
 	a_nom = a_cognom = a_poblacio = "";
 	a_dNaixement = Data();
 }
 
 
-//	MÈTODES	CONSULTORS	
+//	MÃˆTODES	CONSULTORS	
 void Empleat::mostrar() const {
 //Pre:	--				
-//Post:	mostra	la	informació	de	l’empleat	actual	
+//Post:	mostra	la	informaciÃ³	de	lâ€™empleat	actual	
 	cout << "COD  : " << a_codi << endl;
 	cout << "NOM  : " << a_nom << endl;
 	cout << "COG  : " << a_cognom << endl;
 	cout << "POB  : " <<a_poblacio << endl;
 	cout << "D.N : "; 
+  cout << "CP : ";
 	a_dNaixement.mostrar(2);
 }
 
 bool Empleat::esMesJove(Empleat empl) const {
 	//Pre:	--		
-	//Post:	cert	si	l’empleat	actual	és	més	jove	que	empl,	fals	altrament	
+	//Post:	cert	si	lâ€™empleat	actual	Ã©s	mÃ©s	jove	que	empl,	fals	altrament	
 	return empl.a_dNaixement.esMenor(a_dNaixement);
 }
 
-//	MÈTODES	MODIFICADORS	
+//	MÃˆTODES	MODIFICADORS	
 bool Empleat::llegir() {
-	//Pre:	--;	Post:	llegeix	un	emplear	i	retorna	cert	si	s’ha	llegit	un	empleat	(fals	si	el	codi	és	CODI_FI,	0)
+	//Pre:	--;	Post:	llegeix	un	emplear	i	retorna	cert	si	sâ€™ha	llegit	un	empleat	(fals	si	el	codi	Ã©s	CODI_FI,	0)
 	cout << "CODI:" << endl;
 	cin >> a_codi;
 	if (a_codi != CODI_FI) {
